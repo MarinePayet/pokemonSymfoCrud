@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les Attaques !{% endblock %}
+
+{% block body %}
+    <div class="container m-5">
+        <h1> Les attaques !</h1>
+            <ol class="list-group">
+                {% for attack in attacks %}
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> {{attack.name}} {% include "pokemon/_emoticonesAttack.html.twig" %}
+                    <a href="{{path('app_attack_edit', {id:attack.id})}}"><span  class="badge bg-primary rounded-pill" >Modifier</span></a> 
+                    </li>
+                {% endfor %}
+            </ol>
+            <br>
+        <a class="btn btn-primary " href="{{path('app_attack_new')}}">Ajouter une nouvelle attaque</a>
+    </div>
+{% endblock %}

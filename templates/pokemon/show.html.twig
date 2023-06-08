@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} {{ pokemon }} {% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper container mt-5">
+    <h1> {{pokemon}} </h1>
+
+    <div class="container mx-auto mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card " style="width: 18rem;">
+                {% if pokemon.image %}
+                    <img src="{{pokemon.image}}" alt="image du pokemon {{pokemon.name}}" width="200px" class="card-img-top">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title" > {{ pokemon }} </h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{pokemon.category}}</h6>
+                    <p class="card-text">
+                    {% for attack in pokemon.attack %}
+                        <li>{{ attack.name }} {% include "pokemon/_emoticonesAttack.html.twig" %}</li>
+                    {% endfor %}
+
+                </div>
+            </div>
+            <a class="btn btn-primary" href="{{path('app_pokemon_edit', {id:pokemon.id})}}"> Modifier </a>
+            <a class="btn btn-primary" href="{{path("app_pokemon_delete", {id:pokemon.id})}}" >Supprimer</a>
+            
+        </div>
+    </div>    
+</div> 
+
+        <a href="{{path('app_pokemons')}}" class="m-4 btn btn-secondary">Back</a>
+{% endblock %}
+
+
+
+{# {% extends 'base.html.twig' %}
+
+{% block title %} {{ pokemon.name }} {% endblock %}
+
+{% block body %}
+
+<div class="example-wrapper container mt-5">
+    <h1> {{ pokemon.name }} </h1>
+
+    <div class="container mx-auto mt-4">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    {% if pokemon.image %}
+                        <img src="{{ pokemon.image }}" alt="image du pokemon {{ pokemon.name }}" width="200px" class="card-img-top">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title"> {{ pokemon.name }} </h5>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ pokemon.category }}</h6>
+                        <p class="card-text">
+                            {% for attack in pokemon.attack %}
+                                <li>{{ attack.name }}</li>
+                            {% endfor %}
+                        </p>
+                    </div>
+                </div>
+                <a class="btn btn-primary" href="#">Modifier</a>
+                <a class="btn btn-primary" href="#">Supprimer</a>
+            </div>
+        </div>
+    </div> 
+
+    <a href="{{ path('app_pokemons') }}" class="m-4 btn btn-secondary">Back</a>
+</div>
+
+{% endblock %} #}

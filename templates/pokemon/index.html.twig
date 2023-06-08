@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PokemonController!{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper container mt-5">
+    <h1>Les Pokemons ! </h1>
+
+    <table class="table table-hover">
+        <thead>
+            <tr class="table-secondary">
+                <th scope="col">Nom</th>
+                <th scope="col"> Catégorie </th>
+                <th scope="col"> Actions </th>
+            </tr>
+        </thead>
+    {% for pokemon in pokemons %}
+        <tbody>
+            <td scope="row"> {{ pokemon.name }} </td>
+            <td>{{ pokemon.category }}  {% include "pokemon/_emoticonesPoke.html.twig" %}</td>
+            <td> <a href="{{ path('app_pokemon_show', {id:pokemon.id}) }}" class="btn btn-secondary"> Détails </a> </td>
+        </tbody>
+    {% endfor %}
+    </table>
+    <a class="btn btn-secondary" href="{{path('app_pokemon_new')}}">Nouveau Pokemon</a>
+<hr>
+    <a class="btn btn-secondary" href="{{path('app_attacks')}}">Toute les attaques</a>
+</div>
+{% endblock %}
