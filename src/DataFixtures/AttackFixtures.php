@@ -27,66 +27,77 @@ class AttackFixtures extends Fixture implements DependentFixtureInterface
         $attack = new Attack();
         $attack->setName('Ultrason') ;
         $attack->setCategory($this->getReference(CategoryFixtures::CAT_PSYCHO));
+        $attack->setPoints(10) ;
         $manager->persist($attack);
         $this->addReference(self::ATTACK_ULTRASON, $attack);
         
         $attack = new Attack();
         $attack->setName('Charge') ;
         $attack->setCategory($this->getReference(CategoryFixtures::CAT_NORMAL));
+        $attack->setPoints(20) ;
         $manager->persist($attack);
         $this->addReference(self::ATTACK_CHARGE, $attack);
         
         $attack = new Attack();
         $attack->setName('Combo-griffe') ;
         $attack->setCategory($this->getReference(CategoryFixtures::CAT_NORMAL));
+        $attack->setPoints(30) ;
         $manager->persist($attack);
         $this->addReference(self::ATTACK_COMBO_GRIFFE, $attack);
 
         $attack = new Attack();
         $attack->setName('Ultimapoing') ;
         $attack->setCategory($this->getReference(CategoryFixtures::CAT_NORMAL));
+        $attack->setPoints(40) ;
         $manager->persist($attack);
         $this->addReference(self::ATTACK_ULTIMAPOING, $attack);
 
         $attack = new Attack();
         $attack->setName('Danse de feu') ;
         $attack->setCategory($this->getReference(CategoryFixtures::CAT_FEU));
+        $attack->setPoints(30) ;
         $manager->persist($attack);
         $this->addReference(self::ATTACK_DANSE_DE_FEU, $attack);
 
         $attack = new Attack();
         $attack->setName('Eruption') ;
         $attack->setCategory($this->getReference(CategoryFixtures::CAT_INSECTE));
+        $attack->setPoints(10) ;
         $manager->persist($attack);
         $this->addReference(self::ATTACK_ERUPTION, $attack);
 
         $attack = new Attack();
         $attack->setName('Eclair') ;
         $attack->setCategory($this->getReference(CategoryFixtures::CAT_ELEC));
+        $attack->setPoints(20) ;
         $manager->persist($attack);
         $this->addReference(self::ATTACK_ECLAIR, $attack);
 
         $attack = new Attack();
         $attack->setName('Surf') ;
         $attack->setCategory($this->getReference(CategoryFixtures::CAT_EAU));
+        $attack->setPoints(10) ;
         $manager->persist($attack);
         $this->addReference(self::ATTACK_SURF, $attack);
 
         $attack = new Attack();
         $attack->setName('Vibraqua') ;
         $attack->setCategory($this->getReference(CategoryFixtures::CAT_EAU));
+        $attack->setPoints(20) ;
         $manager->persist($attack);
         $this->addReference(self::ATTACK_VIBRAQUA, $attack);
         
         $attack = new Attack();
         $attack->setName('Tunnel') ;
         $attack->setCategory($this->getReference(CategoryFixtures::CAT_TERRE));
+        $attack->setPoints(30) ;
         $manager->persist($attack);
         $this->addReference(self::ATTACK_TUNNEL, $attack);
 
         $attack = new Attack();
         $attack->setName('Seisme') ;
         $attack->setCategory($this->getReference(CategoryFixtures::CAT_TERRE));
+        $attack->setPoints(40) ;
         $manager->persist($attack);
         $this->addReference(self::ATTACK_SEISME, $attack);
 

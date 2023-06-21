@@ -3,16 +3,29 @@
 {% block title %}Les Attaques !{% endblock %}
 
 {% block body %}
-    <div class="container m-5">
+    <div class="container m-5 col-3">
         <h1> Les attaques !</h1>
-            <ol class="list-group">
-                {% for attack in attacks %}
-                    <li class="list-group-item d-flex justify-content-between align-items-center"> {{attack.name}} {% include "pokemon/_emoticonesAttack.html.twig" %}
-                    <a href="{{path('app_attack_edit', {id:attack.id})}}"><span  class="badge bg-primary rounded-pill" >Modifier</span></a> 
-                    </li>
-                {% endfor %}
-            </ol>
-            <br>
-        <a class="btn btn-primary " href="{{path('app_attack_new')}}">Ajouter une nouvelle attaque</a>
+
+    <table class="table table-hover ">
+  <thead>
+    <tr class="table-info">
+      <th scope="col">Nom</th>
+      <th scope="col">Catégorie</th>
+      <th scope="col"> Points</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        {% for attack in attacks %}
+        <th scope="row"> {{attack.name}}</th>
+        <td> {% include "pokemon/_emoticonesAttack.html.twig" %} </td>
+        <td>{{attack.points}}</td>
+        <td><a href="{{path('app_attack_edit', {id:attack.id})}}"><span  class="badge bg-info rounded-pill" >Modifier</span></a> </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+        <a class="btn btn-info " href="{{path('app_attack_new')}}">Ajouter une nouvelle attaque</a>
     </div>
 {% endblock %}

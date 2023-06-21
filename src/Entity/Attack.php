@@ -25,6 +25,9 @@ class Attack
     #[ORM\ManyToMany(targetEntity: Pokemon::class, mappedBy: 'attack')]
     private Collection $pokemon;
 
+    #[ORM\Column]
+    private ?int $points = null;
+
     public function __construct()
     {
         $this->pokemon = new ArrayCollection();
@@ -89,5 +92,17 @@ class Attack
     public function __toString()
     {
         return $this->getName();
+    }
+
+    public function getPoints(): ?int
+    {
+        return $this->points;
+    }
+
+    public function setPoints(int $points): static
+    {
+        $this->points = $points;
+
+        return $this;
     }
 }
