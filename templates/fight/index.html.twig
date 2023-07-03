@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello FightController!{% endblock %}
+
+{% block body %}
+    <div class="container m-5 col-9">
+        <table class="table table-hover ">
+            <thead>
+                <tr class="table-info">
+                    <th scope="col"></th>
+                    <th scope="col">Pokemon 1</th>
+                    <th scope="col">PV</th>
+                    <th scope="col">Points</th>
+                    <th scope="col"> Attaque Pokemon 1</th>
+                    <th scope="col">VS</th>
+                    <th scope="col"> Attaque Pokemon 2</th>
+                    <th scope="col">Points</th>
+                    <th scope="col">PV</th>
+                    <th scope="col">Pokemon 2</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> <img src="{{randomPokemon1.image}}" width="80px" > </td>
+                    <td> {{randomPokemon1}}</td>
+                    <td> {{ randomPokemon1.pv}}</td>
+                    <td> {{ firstAttack1.points}}</td>
+                    <td> {{ firstAttack1 }} </td>
+                    <td class="bg-info"></td>
+                    <td> {{ firstAttack2 }} </td>
+                    <td> {{ firstAttack2.points }} </td>
+                    <td>{{ randomPokemon2.pv}}</td>
+                    <td> {{randomPokemon2}} </td>
+                    <td> <img src="{{randomPokemon2.image}}" width="80px" > </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="container">
+        <button class=" btn btn-info"> COMBAT</button>
+    </div>
+{% endblock %}
